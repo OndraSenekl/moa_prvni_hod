@@ -17,42 +17,48 @@
         <tr>
             <th><input type="number" id="cislo1"></th>
             <th>
-                <select>
-                    <option>+</option>
-                    <option>-</option>
-                    <option>*</option>
-                    <option>/</option>
+                <select id="operator">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
                 </select>
             </th>
             <th><input type="number" id="cislo2"></th>
-            <th><button onclick="Kalkulacka()" id="operator">=</button></th>
+            <th><button onclick="Kalkulacka()">=</button></th>
+        </tr>
+        <tr class="vysledekCSS">
             <th><p id="vysledek"></p></th>
         </tr>
     </table>
     
     <script>
-    function Kalkulacka()
+    function Kalkulacka() 
     {
-        const cislo1 = ('cislo1').value
-        const cislo2 = ('cislo1').value
-        const operator = ('operator').value
+        const cislo1 = parseFloat(document.getElementById('cislo1').value);
+        const cislo2 = parseFloat(document.getElementById('cislo2').value);
+        const operator = document.getElementById('operator').value;
         let vysledek;
 
-        switch (operace) 
+        switch (operator) 
         {
-        case '+':
-            result = cislo1 + cislo2;
-            break;
-        case '-':
-            result = cislo1 - cislo2;
-            break;
-        case '*':
-            result = cislo1 * cislo2;
-            break;
-        case '/':
-            result = cislo2 !== 0 ? cislo1 / cislo2 : 'Nemůžeš dělit nulou';
-            break;
+            case '+':
+                vysledek = cislo1 + cislo2;
+                break;
+            case '-':
+                vysledek = cislo1 - cislo2;
+                break;
+            case '*':
+                vysledek = cislo1 * cislo2;
+                break;
+            case '/':
+                vysledek = cislo2 !== 0 ? cislo1 / cislo2 : 'Nemůžeš dělit nulou';
+                break;
+            default:
+                vysledek = 'Neplatná operace';
         }
+
+        document.getElementById('vysledek').innerText = vysledek;
     }
     </script>
     
