@@ -15,7 +15,7 @@
     
     <table>
         <tr>
-            <th><input type="number" title="cislo1"></th>
+            <th><input type="number" id="cislo1"></th>
             <th>
                 <select>
                     <option>+</option>
@@ -24,10 +24,35 @@
                     <option>/</option>
                 </select>
             </th>
-            <th><input type="number" title="cislo2"></th>
-            <th><button>=</button></th>
+            <th><input type="number" id="cislo2"></th>
+            <th><button onclick="operace" id="operator">=</button></th>
             <th title="vysledek"><break></break></th>
         </tr>
     </table>
+    
+    <script>
+    function Kalkulacka()
+    {
+        const cislo1 = ('cislo1').value
+        const cislo2 = ('cislo1').value 
+        const operator = ('operator').value
+        switch (operace) 
+        {
+        case '+':
+            result = cislo1 + cislo2;
+            break;
+        case '-':
+            result = cislo1 - cislo2;
+            break;
+        case '*':
+            result = cislo1 * cislo2;
+            break;
+        case '/':
+            result = cislo2 !== 0 ? cislo1 / cislo2 : 'Nemůžeš dělit nulou';
+            break;
+        }
+    }
+    </script>
+    
 </body>
 </html>
