@@ -13,8 +13,12 @@
     
     <table>
         <tr>
-            <th><input type="number" id="cislo1"></th>
             <th>
+                <label for="cislo1">Číslo 1:</label>
+                <input type="number" id="cislo1">
+            </th>
+            <th>
+                <label for="operator">Operátor:</label>
                 <select id="operator">
                     <option value="+">+</option>
                     <option value="-">-</option>
@@ -22,8 +26,13 @@
                     <option value="/">/</option>
                 </select>
             </th>
-            <th><input type="number" id="cislo2"></th>
-            <th><button onclick="Kalkulacka()">=</button></th>
+            <th>
+                <label for="cislo2">Číslo 2:</label>
+                <input type="number" id="cislo2">
+            </th>
+            <th>
+                <button onclick="Kalkulacka()">=</button>
+            </th>
         </tr>
         <tr>
             <th colspan="4"><p id="vysledek"></p></th>
